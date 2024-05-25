@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping Tags</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: dimgray;
+            margin: 0px;
+        }
+        header {
+            width: auto;
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        main {
+            background-color: white;
+            margin: 10px;
+            border-radius: 10px 0px;
+            box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.493);
+        }
+        article {
+            background-color: lightgray;
+            padding: 2px 5px 7px 5px;
+        }
+
+        nav {
+                background-color: rgb(119, 119, 119);
+                padding: 3px;
+            }
+        nav > a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            margin-right: 30px;
+        }
+
+        nav> a:hover {
+            text-decoration: underline;
+        }
+        article > aside {
+            background-color: rgb(121, 121, 121);
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 4px 5px 6px 7px;
+            margin: 0px;
+        }
+
+        footer > p {
+            margin : 0px;
+        }
+
+
+        section#assuntos {
+            padding: 10px;
+        }
+
+        section#assuntos > a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin-right: 30px;
+        }
+        section#assuntos > a:hover {
+            text-decoration: underline;
+        }
+
+        section#noticias {
+            padding: 12px;
+        }
+
+        div#bola {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: rgb(255, 13, 13);
+            border-radius: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h1>Meu site</h1>
+    <nav>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </nav>
+   </header>
+   <main>
+    <section id="assuntos">
+    <a href="#">Esportes</a>
+    <a href="#">Tecnologia</a>
+    <a href="#">Política</a>
+    </section>
+    <section id="noticias">
+        <article>
+            <h2>Notícias do Brasil</h2>
+        <p>Lorem ipsum Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint necessitatibus sequi dolore iure doloribus dolor, modi provident eligendi ut quasi excepturi voluptatum quisquam laborum, ratione dolorem ipsam a odio blanditiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore doloremque ex doloribus! Maxime aut nulla sapiente delectus quod, esse accusantium enim eaque dolores dolorum molestias voluptatem, quo ab, id perferendis. dolor sit, amet consectetur adipisicing elit. Ullam quam id impedit, deleniti quis cumque? Sint assumenda eligendi itaque fugit commodi deserunt adipisci placeat qui consequatur asperiores! Asperiores, ab vitae?</p>
+        <aside>
+            <p>Artigo escrito por Gustavo Santos</p>
+        </aside>
+        </article>    
+    </section>
+   </main> 
+   <footer>Desenvolvido por Gustavo Santos.</footer>
+
+   <div id="bola">
+    <p>Bola</p>
+   </div>
+</body>
+</html>

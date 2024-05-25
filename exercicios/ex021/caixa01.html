@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caixas</title>
+    <style>
+
+        body {
+            background-color: black;
+            text-align: justify;
+        }
+
+        p {
+            color: white;
+        }
+
+        h1 { /* Caixa box-level*/
+
+            display: inline;
+            color: white;
+            background-color: black;
+            height: 61px;
+            width: 371px;
+
+
+            border: 10px solid black;
+
+            padding: 29px 13px 3px 13px;
+
+            outline-width: 5px;
+            outline-style: dashed;
+            outline-color: salmon;
+
+            outline: 5px dashed salmon;
+
+            margin: 20px auto 40px auto;
+        }
+
+        /* Caixa inline-level */
+            a {
+
+                display: inline-block;
+                border-width: 3px;
+                border-style: groove;
+                border-color: red;
+
+               padding: 1px 1px 1px 1px;
+            }
+
+            header {
+                background-color: white;
+                text-decoration: none;
+            }
+/*ir na tag que eu quero e referenciar o id em seguida botar o campo que eu quero*/
+            nav#navegar > a {
+                text-decoration: none;
+                border-style: none;
+            }
+
+            nav#navegar > a:hover {
+                text-decoration: underline;
+                color: black;
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Exemplo de caixa box-level</h1>
+    <p>Parágrafos também são exemplos de box-level, mas os <a href="#">links são exemplos de caixas inline-level</a>. Vamos ver como tudo isso funciona.</p>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde similique rerum doloribus omnis enim. Soluta laudantium eligendi quod et cum dolorem obcaecati? Enim ad porro veritatis minima numquam accusantium ullam Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit velit cumque ducimus atque ad dolore vel, quo incidunt tempore odio pariatur facere quibusdam, itaque nobis dolor totam dolorem, tenetur reiciendis!</p>
+
+    <header>
+        <nav id="navegar">
+            <a href="#">Hacks</a>
+            <a href="#">Arquivos</a>
+            <a href="#">Projetos</a>
+            <a href="#">Desenvolvimento</a>
+        </nav>
+    </header>
+</body>
+</html>
