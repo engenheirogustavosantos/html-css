@@ -1,6 +1,6 @@
 body {
     font-family: "Outfit", sans-serif;
-    background-image: url("../imagens/fundo-base.jpg");
+    background-image: url("../imagens/wallpapersden.com_resident-evil-4-2023-gaming-art_1920x1357.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -119,7 +119,7 @@ body {
 }
 
 .cartao.fundo-1 {
-    background: url("../imagens/fundo-1.jpg") no-repeat;
+    background: url("../imagens/textura-de-parede-pintada-deteriorada-e-desgastada-em-cinza-desgastado-fundo-vintage-de-luxo-parede-vintage_899020-796.jpg") no-repeat;
 }
 
 .cartao.fundo-2 {
