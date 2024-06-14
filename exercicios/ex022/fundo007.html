@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+        
+    #container {
+        background-image: url(imagens/target001.png);
+        background-size: 100% 100%;
+    background-color: purple;
+    height: 600px;
+    width: 600px;
+    position: fixed;
+
+    }
+
+    #quadrado {
+        background-image: url(imagens/target001.png);
+        background-size: 100% 100%;
+        background-color: yellow;
+        height: 200px;
+        width: 200px;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+        /* meio da esquerda -50% de cima -50% */
+        transform: translate(-50%, -50%);
+    }
+</style>
+</head>
+
+
+<body>
+    <!-- Criar duas divs container e quadrado -->
+    <!-- estilizar elas com cores, tamanhos, alterar posicionamento (container = fixed, quadrado = absolute ) inserir cor, inserir os elementos top e left na div #quadrado fazer a transformação -->
+    <!-- centralizar uma div dentro da outra -->
+    <div id="container">
+
+        <div id="quadrado">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
