@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+:root {
+    --cor0: #00264B;
+    --cor1: #ffffff;
+    --cor2: #59aef7;
+     --cor3: #001327;
+
+   /* --cor4: #1a5c37;    
+    --cor5: #063d1e;  */
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor3));
+    min-height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--cor1);
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem;
+    text-indent: 40px;
+}
+
+.header_content {
+    display: flex; /* Alinha os itens em linha (horizontalmente) */
+    justify-content: space-around; /* Espaça os itens de forma igual */
+    align-items: center; /* Alinha verticalmente */
+    margin: 0 auto;
+    max-width: 800px; /* Define uma largura máxima para o contêiner */
+    padding: 20px 0; /* Adiciona espaçamento em cima e embaixo */
+}
+
+.header_content img {
+    width: 130px; /* Define o mesmo tamanho para todas as imagens */
+    height: auto; /* Mantém a proporção original das imagens */
+    object-fit: contain; /* Garante que a imagem se encaixe sem distorção */
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.192);
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.3em;
+    margin-bottom: 100px;
+}
+
+
+nav > a {
+    color: gray;
+    padding: 10x;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.1s;
+}
+
+nav > a:hover {
+    /* background-color: var(--cor0); */
+    color: var(--cor0);
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    zoom: 0.8;
+}
+
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px ;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.481);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+}
+
+#logo-gcm-p img {
+    display: block;
+    margin: auto;
+    width: 300px;
+}

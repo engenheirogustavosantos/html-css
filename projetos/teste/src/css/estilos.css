@@ -1,0 +1,151 @@
+body {
+    background-color: antiquewhite;
+}
+
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px ;
+    padding: 20px;
+    /* background-color: white;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.481); */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.jornal {
+    width: 950px;
+    height: 670px;
+    position: relative;
+    padding: 20px;
+}
+
+.btn-seta {
+    background-color: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: static;
+}
+
+.btn-seta.btn-voltar {
+    transform: rotateY(180deg);
+}
+
+.btn-seta.btn-avancar {
+    transform: rotateY(180deg);
+}
+
+.btn-seta:hover {
+    background-color: #7e7e7e;
+}
+
+.cartao {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+
+    /* 
+      Comentário pra ajudar a entender o flex direction column :) 
+  
+      Quando o flex-direction tem valor column
+      o justify-content alinha os filhos verticalmente
+      e o align-items alinha os filhos horizontalmente
+      no caso do flex-direction com valor row é o contrário
+    */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartao.selecionado {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    width: auto; /* Ajuste a largura conforme necessário */
+    height: auto; /* Ajuste a altura conforme necessário */
+    margin: 2.5px;
+}
+
+.noticia {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.noticia:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Sombra para o texto */
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 100%;
+}
+
+.overlay h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlay p {
+    font-size: 0.9rem;
+}
+
+.noticia:hover {
+    z-index: 1;
+}
+
+
+/* Parte dos quadros de notícias */
+.noticia-g{
+    width: 812px;
+    height: 400px;
+
+}
+
+.noticia-p {
+    width: 403px;
+    height: 250px;
+
+}
+
+.container a {
+    text-decoration: none;
+}

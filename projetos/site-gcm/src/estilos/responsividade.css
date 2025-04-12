@@ -1,0 +1,51 @@
+/* Responsividade para telas menores (mobile) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2em; /* Diminui o tamanho do texto em telas menores */
+    }
+
+    .header_content {
+        justify-content: space-between;
+    }
+
+    .header_content img {
+        width: 80px; /* Reduz o tamanho das imagens em telas pequenas */
+    }
+
+    #logo-gcm{
+        width: 70px;
+    }
+
+    nav {
+        flex-direction: column; /* Alinha os links de navegação em coluna no mobile */
+        gap: 10px; /* Diminui o espaçamento entre os links */
+    }
+
+    nav > a {
+        font-size: 1em; /* Diminui o tamanho da fonte dos links de navegação */
+    }
+
+    main {
+        margin: 10px;
+        padding: 10px;
+        box-shadow: none; /* Remove o sombreado em dispositivos móveis */
+        border-radius: 0; /* Remove a borda arredondada em telas menores */
+    }
+
+    main img {
+        width: 100%; /* Mantém a imagem responsiva */
+        height: auto; /* Garante que a altura da imagem seja proporcional */
+    }
+
+    p {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte para textos */
+        text-indent: 20px; /* Ajusta a indentação do parágrafo em dispositivos móveis */
+    }
+}
+
+

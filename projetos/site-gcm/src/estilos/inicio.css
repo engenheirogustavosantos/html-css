@@ -1,0 +1,663 @@
+@charset "UTF-8";
+
+:root {
+    --cor0: #00264B;
+    --cor1: #F7F7F7;
+    --cor2: #59aef7;
+     --cor3: #001327;
+
+   /* --cor4: #1a5c37;    
+    --cor5: #063d1e;  */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor3));
+    min-height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--cor1);
+}
+
+
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem;
+    text-indent: 40px;
+}
+
+.header_content {
+    display: flex; /* Alinha os itens em linha (horizontalmente) */
+    justify-content: space-around; /* Espaça os itens de forma igual */
+    align-items: center; /* Alinha verticalmente */
+    margin: 0 auto;
+    max-width: 800px; /* Define uma largura máxima para o contêiner */
+    padding: 20px 0; /* Adiciona espaçamento em cima e embaixo */
+}
+
+.header_content img {
+    width: 130px; /* Define o mesmo tamanho para todas as imagens */
+    height: auto; /* Mantém a proporção original das imagens */
+    object-fit: contain; /* Garante que a imagem se encaixe sem distorção */
+}
+
+#logo-gdm {
+    width: 140px;
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.192);
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.3em;
+    margin-bottom: 5px;
+}
+
+
+nav > a {
+    color: gray;
+    padding: 10x;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.1s;
+}
+
+nav > a:hover {
+    /* background-color: var(--cor0); */
+    color: var(--cor0);
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: var(--cor1);
+    margin: 0px;
+    padding: 0;
+    zoom: 0.7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    /* overflow-x: hidden; */
+}
+
+.principal {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 300px;
+    max-width: 1400px;
+    margin: auto;
+    flex: 1;
+}
+
+.lista-noticias {
+    width: 1428px;
+    height: 695px;
+}
+
+.jornal {
+    width: 1400px;
+    height: 684px;
+    position: relative;
+    align-items: center;
+    position: relative;
+}
+
+.btn-container {
+    position: relative;
+}
+
+.btn-seta {
+    background-color: var(--cor1);
+    width: 60px;
+    height: 70px;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out;
+    position: relative;
+    top: 50%; /* Inicialmente centralizado verticalmente */
+    transform: translateY(-50%);
+    z-index: 10;
+    opacity: 0;
+}
+
+.btn-seta.btn-voltar {
+    transform: rotateY(180deg);
+}
+
+.btn-container:first-of-type .btn-seta {
+    left: 11px;
+    top: 390px; /* Ajuste para a posição do botão esquerdo */
+}
+
+.btn-container:last-of-type .btn-seta {
+    right: -1323px;
+    top: -2940px;; /* Ajuste para a posição do botão direito */
+}
+
+.btn-seta.btn-avancar {
+    transform: rotateY(180deg);
+}
+
+.principal:hover .btn-seta {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+}
+
+.principal .lista-noticias:hover .btn-seta {
+    opacity: 1;
+    transition: opacity 0.7s ease;
+}
+
+.btn-seta:hover {
+    background-color: #7e7e7e;
+}
+
+.cartao {
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    padding: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    background: none;
+
+    /* 
+      Comentário pra ajudar a entender o flex direction column :) 
+  
+      Quando o flex-direction tem valor column
+      o justify-content alinha os filhos verticalmente
+      e o align-items alinha os filhos horizontalmente
+      no caso do flex-direction com valor row é o contrário
+    */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cartao.selecionado {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* A primeira coluna será a noticia-g, a segunda será noticia-p e noticia-m */
+    grid-template-rows: auto;
+    gap: 3px;
+    width: 100%;
+    margin: 0px;
+}
+
+.noticia {
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.noticia:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Sombra para o texto */
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 100%;
+}
+
+.overlay h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.overlay p {
+    font-size: 0.9rem;
+}
+
+.noticia:hover {
+    z-index: 1;
+}
+
+
+/* Parte dos quadros de notícias */
+.noticia-g {
+    grid-row: 1 / 3; /* Ocupará duas linhas no grid */
+    width: 100%;
+    height: 400px;
+}
+
+.noticia-p {
+    width: 100%;
+    height: 260px;
+}
+
+.noticia-m {
+    width: 100%;
+    height: 400px;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+
+.avisos {
+    width: 495px;
+    height: 550px;
+    text-align: center;
+    background-color: white;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    left: 437px;
+    top: 82px;
+}
+
+.avisos h1 {
+    background-color: var(--cor0);
+    color: var(--cor1);
+    font-size: 2.5em;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.avisos .links {
+    width: 470px;
+    height: 100px;
+}
+
+.avisos #traco {
+    background-color: var(--cor3);
+    width: 3px;
+    height: 60px;
+    position: absolute;
+}
+
+.avisos a {
+    color: var(--cor3);
+    font-size: 2em;
+    text-decoration: none;
+    text-align: start;
+}
+
+.avisos #data {
+    font-size: 0.5em;
+}
+
+.mais-avisos {
+    width: 150px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--cor3);
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.mais-avisos:hover {
+    background-color: var(--cor3);
+}
+
+.mais-avisos:hover a {
+    color: white;
+}
+
+.mais-avisos img {
+    width: 25px;
+    height: 25px;
+    background-color: none;
+    color: white;
+}
+
+.mais-avisos:hover img {
+    content: url("../imagens/mais-branco.png");
+    height: 22px;
+}
+
+#btn-mais {
+    font-size: 1.6em;
+}
+
+.quadro_servicos a {
+    text-decoration: none;
+}
+
+.titulo-servicos {
+    width: 125px;
+    display: flex;
+    height: 60px;
+    position: relative;
+    top: -586px;
+    left: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.titulo-servicos #titulo-s {
+    width: 125px;
+    height: 36px;
+    position: relative;
+    left: -28px;
+}
+
+.titulo-servicos #titulo-s p {
+    font-size: 2em;
+    color: var(--cor0);
+}
+
+.titulo-servicos #traco {
+    background-color: var(--cor3);
+    width: 4px;
+    height: 46px;
+    position: absolute;
+}
+
+.quadro-servicos{
+    width: 703px;
+    height: 591px;
+    position: relative;
+    top: -610px;
+    left: 4px;
+}
+
+.servicos {
+    width: 825px; 
+    height: 177px;
+    margin: 20px auto; /* Manter centralizado */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-color: #00264B;
+    position: relative; /* Mantido para contextos de posicionamento */
+}
+
+.servicos p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quadro-servicos a {
+    text-decoration: none;
+}
+
+#s1 {
+    background-image: url(../imagens/denuncia.jpg);
+}
+
+#s2 {
+    background-image: url(../imagens/denuncia.jpg);
+}
+#s3 {
+    background-image: url(../imagens/denuncia.jpg);
+}
+
+.quadro-noticias {
+    width: 827px;
+    height: 1187px;
+    background-color: white;
+    position: relative;
+    top: -572px;
+    left: 4px;
+    border: 1px solid rgba(128, 128, 128, 0.449);
+    margin-top: -20px;
+}
+
+.container-noticia {
+    width: 390px;
+    height: 569px;
+    background-color: white;
+    margin: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.449);
+}
+
+#n1 {
+    position: relative;
+    left: 7px;
+    top: 7px;
+}
+
+#n2 {
+    position: relative;
+    left: 392px;
+    top: -579px;
+}
+
+#n3 {
+    position: relative;
+    top: 2px;
+    left: -414px;
+}
+
+#n4 {
+    position: relative;
+    top: -579px;
+    left: 393px;
+}
+
+.container-noticia img {
+    width: 388px;
+    height: auto;
+}
+
+.container-link {
+    width: 388px;
+    height: 305px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.container-link a {
+    text-decoration: none;
+    color: var(--cor0);
+}
+
+.info-data {
+    width: 388px;
+    height: 90px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 93px;
+    left: 0px;
+    border-top: 1px solid rgba(128, 128, 128, 0.449);
+}
+
+.bola {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(128, 128, 128, 0.732);
+    border-radius: 50%;
+    margin-right: -32px;
+    margin-left: 10px;
+}
+
+.info-data p {
+    font-size: 1.3em;
+}
+
+.mais-noticias {
+    width: 190px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--cor3);
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    top: -510px;
+    left: 321px;
+}
+
+.mais-noticias:hover {
+    background-color: var(--cor3);
+}
+
+.mais-noticias a {
+    text-decoration: none;
+    color: var(--cor0);
+}
+
+.mais-noticias:hover a {
+    color: white;
+}
+
+.mais-noticias img {
+    width: 25px;
+    height: 25px;
+    background-color: none;
+    color: white;
+}
+
+.mais-noticias:hover img {
+    content: url("../imagens/mais-branco.png");
+    height: 22px;
+}
+
+#btn-mais {
+    font-size: 1.6em;
+}
+
+.banner-sei {
+    width: 500px;
+    height: 535px;
+    position: relative;
+    top: -588px;
+    left: 888px;
+}
+
+.banner-sei img {
+    width: 100%;
+    height: 100%;
+}
+
+.links-uteis {
+    width: 495px;
+    height: 550px;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    margin: 20px auto;
+    left: 722px;
+    top: -500px;
+    background-color: transparent;
+}
+
+.links-uteis h1 {
+    background-color: var(--cor0);
+    color: var(--cor1);
+    font-size: 2.5em;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.links-uteis #links {
+    width: 470px;
+    height: 90px;
+}
+
+.links-uteis #traco {
+    background-color: var(--cor3);
+    width: 4px;
+    height: 46px;
+    position: absolute;
+}
+
+.links-uteis a {
+    text-decoration: none;
+    color: var(--cor3);
+}
+
+.links-uteis a:hover {
+    color: var(--cor2);
+}
+
+footer {
+    width: 100%;
+    height: 260px;
+    background-color: white;
+}
+
+#p-footer-1 {
+    width: 140px;
+    height: 36px;
+    background-color: burlywood;
+}
+
+#p-footer-2 {
+    width: 140px;
+    height: 36px;
+    background-color: #00264B;
+    position: relative;
+    top: -36px;
+    left: 2030px;
+}
+
+.conteudos {
+    width: 200px;
+    height: 200px;
+    background-color: #59aef7;
+}
